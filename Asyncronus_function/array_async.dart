@@ -1,5 +1,7 @@
 Future<void> numberlist() async {
-  var number = [
+  var oddtotal = 0;
+  var eventotal = 0;
+  List<int> number = [
     1122,
     5468,
     756498,
@@ -11,17 +13,16 @@ Future<void> numberlist() async {
     7869,
     9096,
   ];
-  var oddtotal;
-  var eventotal;
-  for (var i; i < number.length; i++) {
+
+  for (var i = 0; i < number.length; i++) {
     Future.delayed(Duration(microseconds: 1), () {
       if (i % 2 == 0) {
-        oddtotal = oddtotal + i;
+        oddtotal = oddtotal + number[i];
       } else {
-        eventotal = eventotal + i;
+        eventotal = eventotal + number[i];
       }
     });
   }
   print("oddtotal;$oddtotal");
-  print("oddtotal;$eventotal");
+  print("Eventotal;$eventotal");
 }
